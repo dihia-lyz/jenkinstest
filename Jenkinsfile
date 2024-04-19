@@ -18,5 +18,16 @@ pipeline{
               }
             }
         }
+
+         stage("Test 2"){
+            steps{
+              script {
+              echo "branch name is "+ env.BRANCH_NAME
+                if(env.BRANCH_NAME!='master' ){
+                    echo "stageb 2 branch is not master"
+                }
+              }
+            }
+         }
     }
 }
