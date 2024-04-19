@@ -1,11 +1,9 @@
 pipeline{
     agent any
 
-        environment {
+    environment {
         BRANCH_NAME = "${env.BRANCH_NAME}"
     }
-
-
 
     stages{
         stage("Test"){
