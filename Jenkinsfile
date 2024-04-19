@@ -4,7 +4,12 @@ pipeline{
     stages{
         stage("Test"){
             steps{
-                echo  "test 2"
+              script {
+              echo "branch name is "+ env.BRANCH_NAME
+                if(env.BRANCH_NAME!='master' ){
+                    echo "branch is not master"
+                }
+              }
             }
         }
     }
